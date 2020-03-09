@@ -1,38 +1,98 @@
 /*
-    Day 2 is coded in javascript since it is the language most equpited to handle this task.
+    Day 3 is coded in javascript since it is the language most equpited to handle this task.
 */
 document.getElementById("run").onclick = (e) =>{
-    var arr = proccessTextIntoArray(document.getElementById("input").value);
-    arr[1] = 12;
-    arr[2] = 2;
-    for(let i = 0; i < arr.length; i+=4) {
-        let opcode = arr[i];
-        let location1 = arr[i + 1];
-        let location2 = arr[i + 2];
-        let storageLocation = arr[i + 3];
-        let calculatedValue = 0;
 
-        let value1 = arr[location1];
-        let value2 = arr[location2];
-        
-        if(opcode == 1){
-            calculatedValue = value1 + value2;
-            arr[storageLocation] = calculatedValue;
-        }
-        else if(opcode == 2){
-            calculatedValue = value1 * value2;
-            arr[storageLocation] = calculatedValue;
-        }
-        else if(opcode == 99){
-            break;
-        }
-        else{
-            console.log("error");
-        }
-    }
-    document.getElementById("output").innerText = arr[0];
+
+    
+    // document.getElementById("output").innerText = arr[0];
 }
 
 function proccessTextIntoArray(data){
-    return data.split(",").map(v => parseInt(v));
+    return data.split(",").map(v => v);
+}
+
+var finalListOfPointsLineOne = [];
+var finalListOfPointsLineTwo = [];
+
+var finalListOfPoints = [];
+
+function findIntersection(){
+    for(let d of finalListOfPointsLineOne){
+        if(finalListOfPointsLineTwo.contains())
+    }
+}
+
+function calculateAllValueForLineOne(data){
+    let x = 0;
+    let y = 0;
+    for(var d of data){
+        switch(d[0]){
+            case 'R':
+                let temp = x + parseInt(d.slice(1, d.length));
+                for(let i = x; i < temp; i++){
+                    finalListOfPointsLineOne.push([x,y]);
+                }
+                x += temp;
+                break;
+            case 'L':
+                let temp = x - parseInt(d.slice(1, d.length));
+                for(let i = x; i < temp; i--){
+                    finalListOfPointsLineOne.push([x,y]);
+                }
+                x -= temp;
+                break;
+            case 'U':
+                let temp = y + parseInt(d.slice(1, d.length));
+                for(let i = y; i < temp; i++){
+                    finalListOfPointsLineOne.push([x,y]);
+                }
+                y += temp;
+                break;
+            case 'D':
+                let temp = y - parseInt(d.slice(1, d.length));
+                for(let i = y; i < temp; i--){
+                    finalListOfPointsLineOne.push([x,y]);
+                }
+                y -= temp;
+                break;
+        }
+    }
+}
+
+function calculateAllValueForLineTwo(data){
+    let x = 0;
+    let y = 0;
+    for(var d of data){
+        switch(d[0]){
+            case 'R':
+                let temp = x + parseInt(d.slice(1, d.length));
+                for(let i = x; i < temp; i++){
+                    finalListOfPointsLineOne.push([x,y]);
+                }
+                x += temp;
+                break;
+            case 'L':
+                let temp = x - parseInt(d.slice(1, d.length));
+                for(let i = x; i < temp; i--){
+                    finalListOfPointsLineOne.push([x,y]);
+                }
+                x -= temp;
+                break;
+            case 'U':
+                let temp = y + parseInt(d.slice(1, d.length));
+                for(let i = y; i < temp; i++){
+                    finalListOfPointsLineOne.push([x,y]);
+                }
+                y += temp;
+                break;
+            case 'D':
+                let temp = y - parseInt(d.slice(1, d.length));
+                for(let i = y; i < temp; i--){
+                    finalListOfPointsLineOne.push([x,y]);
+                }
+                y -= temp;
+                break;
+        }
+    }
 }
