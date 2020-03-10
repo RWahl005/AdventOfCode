@@ -1,5 +1,9 @@
 /*
-    Day 3 is coded in javascript since it is the language most equpited to handle this task.
+    Here is Day 3 coded in javascript. This code does work and will give you the correct response.
+    Even with 4,000 promises running at the same time I estimate it will take about 45+ minutes to finish.
+
+    I Instead choose to code it in Java. The Java program finishes in 58 seconds. About the same logic is used in both
+    versions of the code. This code is not commented since I did not complete the challenge with this code.
 */
 document.getElementById("run").onclick = (e) => {
 
