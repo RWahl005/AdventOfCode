@@ -78,6 +78,8 @@ public class Calculations implements Runnable {
         else
             System.out.println(output.get(0).getAnswer());
 
+        System.out.println(outputOne);
+
     }
 
     /**

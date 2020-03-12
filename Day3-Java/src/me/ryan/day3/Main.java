@@ -19,7 +19,7 @@ public class Main {
     /**
      * If you want the answer for part one.
      */
-    public static final boolean partOne = false;
+    public static final boolean partOne = true;
 
     public static void main(String[] args){
         /**
